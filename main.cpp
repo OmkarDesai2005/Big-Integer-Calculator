@@ -5,6 +5,7 @@
 #include "subtract.h"
 #include "multiply.h"
 #include "divide.h"
+#include "modulo.h"
 
 using namespace std;
 
@@ -18,7 +19,8 @@ void showMenu()
     cout << "2. Subtraction\n";
     cout << "3. Multiplication\n";
     cout << "4. Division\n";
-    cout << "5. Exit\n";
+    cout << "5. Modulo\n";
+    cout << "6. Exit\n";
 
     cout << "==============================\n";
     cout << "Enter your choice: ";
@@ -33,13 +35,13 @@ int main()
         showMenu();
         cin >> choice;
 
-        if (choice == 5)
+        if (choice == 6)
         {
             cout << "Goodbye!\n";
             break;
         }
 
-        if (choice < 1 || choice > 5)
+        if (choice < 1 || choice > 6)
         {
             cout << "Invalid choice!\n";
             continue;
@@ -71,6 +73,10 @@ int main()
 
             case 4:
                 result = divide(num1, num2);
+                break;
+
+            case 5:
+                result = modulo(num1, num2);
                 break;
         }
 
